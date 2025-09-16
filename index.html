@@ -1,2 +1,611 @@
-<h1>Hello, world!</h1>
-<p>Welcome to my GitHub Page.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreelakshmi M Krishnan - MBA Finance & Operations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cv-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #e8f4f8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        .education-item, .experience-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .education-item:hover, .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .item-company {
+            font-weight: 500;
+            color: #3498db;
+            margin-top: 5px;
+        }
+
+        .item-date {
+            color: #7f8c8d;
+            font-weight: 500;
+            background: #ecf0f1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .item-details {
+            color: #555;
+        }
+
+        .achievement-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .achievement-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .achievement-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 0.8rem;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .achievement-card:hover {
+            transform: scale(1.05);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #3498db;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3498db;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .contact-item {
+                font-size: 0.8rem;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #e74c3c;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            transition: transform 0.2s ease;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            background: #c0392b;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cv-card">
+            <div class="header">
+                <div class="header-content">
+                    <h1 class="name">Sreelakshmi M Krishnan</h1>
+                    <p class="title">MBA Finance & Operations | Strategy & Data Analytics Professional</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ID: 10269971</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Class of 2026</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- Key Achievements Section -->
+                <section class="section fade-in">
+                    <h2 class="section-title"><i class="fas fa-trophy"></i> Key Achievements</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-icon">🏆</div>
+                            <h4>National Winner</h4>
+                            <p>Tata Consumer Products (1/13,378)</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-icon">🎯</div>
+                            <h4>Top 100 B-School Leaders</h4>
+                            <p>Unstop 2025</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-icon">💼</div>
+                            <h4>56 Months</h4>
+                            <p>Total Work Experience</p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-icon">🎓</div>
+                            <h4>40% Merit Scholarship</h4>
+                            <p>BITS School of Management</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section fade-in">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">MBA (Finance & Operations)</div>
+                                <div class="item-company">BITS School of Management (BITSoM), Mumbai</div>
+                            </div>
+                            <div class="item-date">2026 Ongoing</div>
+                        </div>
+                        <div class="item-details">
+                            <strong>40% Merit Scholarship</strong> | Currently pursuing advanced studies in Finance and Operations
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">B. Tech. (Civil Engineering)</div>
+                                <div class="item-company">Rajagiri School of Engineering & Technology</div>
+                            </div>
+                            <div class="item-date">2019</div>
+                        </div>
+                        <div class="item-details">
+                            <strong>89.6%</strong> | Honors List Student | Final year topper (1/70) with O Grade in 10 subjects
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professional Experience -->
+                <section class="section fade-in">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Decision Science Analyst Intern</div>
+                                <div class="item-company">Accenture Strategy & Consulting</div>
+                            </div>
+                            <div class="item-date">Apr'25-May'25</div>
+                        </div>
+                        <div class="item-details">
+                            <ul class="achievement-list">
+                                <li>Built Azure OpenAI + RAG solution mapping 100+ wind/solar regulatory flows</li>
+                                <li>Enabled execution of Ireland's €1.3B Climate Action Plan</li>
+                                <li>Recognized by MD for excellence; presented to 14 leaders</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Chief of Staff (Central Resource)</div>
+                                <div class="item-company">Navalt Solar & Electric Boats Pvt Ltd</div>
+                            </div>
+                            <div class="item-date">Apr'22-Jun'24</div>
+                        </div>
+                        <div class="item-details">
+                            <ul class="achievement-list">
+                                <li><strong>Fast-tracked promotion</strong> to Central Resource with 9.76/10 rating within 6 months</li>
+                                <li>Secured <strong>₹5.7 cr funding</strong> including ₹1.7 cr SIDBI partnership</li>
+                                <li>Saved <strong>₹2 cr</strong> through 121 critical audit findings and 44% reduction in receivable aging</li>
+                                <li>Standardized <strong>₹120 cr product line pricing</strong> within 3-month timeline</li>
+                                <li>Optimized data management by 120%, reducing manual tasks by 20% for 135 employees</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Sr. Operations Analyst</div>
+                                <div class="item-company">Extra Tech</div>
+                            </div>
+                            <div class="item-date">Dec'20-Mar'22</div>
+                        </div>
+                        <div class="item-details">
+                            <ul class="achievement-list">
+                                <li>Awarded "Employee with Exemplary Work Ethic" (sole winner, 4.88/5 rating)</li>
+                                <li>Acquired <strong>₹12 cr in projects</strong> and managed projects worth ₹54 cr</li>
+                                <li>Generated additional revenue of <strong>₹4 cr</strong> through strategic partnerships</li>
+                                <li>Realized cost savings exceeding <strong>₹5.8 crore</strong> for 28 clients</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div>
+                                <div class="item-title">Probationary Officer</div>
+                                <div class="item-company">The South Indian Bank Ltd</div>
+                            </div>
+                            <div class="item-date">Oct'19-Nov'20</div>
+                        </div>
+                        <div class="item-details">
+                            <ul class="achievement-list">
+                                <li>Achieved fraud reporting exceeding <strong>₹25 cr</strong> through 200+ daily AML checks</li>
+                                <li>Increased gold loan portfolio by <strong>15% (₹6 cr)</strong> in 3 months</li>
+                                <li>Recovered <strong>₹3.6 cr in NPA</strong> through targeted recovery strategies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Statistics -->
+                <section class="section fade-in">
+                    <h2 class="section-title"><i class="fas fa-chart-bar"></i> Impact Metrics</h2>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-number">₹120+ Cr</div>
+                            <div class="stat-label">Total Project Value Managed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">National Competition Wins</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">56</div>
+                            <div class="stat-label">Months Work Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Merit Scholarship</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills -->
+                <section class="section fade-in">
+                    <h2 class="section-title"><i class="fas fa-cogs"></i> Core Competencies</h2>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h4>Strategy & Analytics</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Data Analytics</span>
+                                <span class="skill-tag">Business Strategy</span>
+                                <span class="skill-tag">Financial Analysis</span>
+                                <span class="skill-tag">Operations</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Technology</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Azure OpenAI</span>
+                                <span class="skill-tag">RAG Solutions</span>
+                                <span class="skill-tag">ERP Systems</span>
+                                <span class="skill-tag">Process Automation</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Leadership</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Team Management</span>
+                                <span class="skill-tag">Stakeholder Relations</span>
+                                <span class="skill-tag">Project Leadership</span>
+                                <span class="skill-tag">Cross-functional Teams</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Finance & Banking</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">AML Compliance</span>
+                                <span class="skill-tag">Risk Management</span>
+                                <span class="skill-tag">Portfolio Management</span>
+                                <span class="skill-tag">Financial Forecasting</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Recognition -->
+                <section class="section fade-in">
+                    <h2 class="section-title"><i class="fas fa-star"></i> Recent Recognition</h2>
+                    <div class="education-item">
+                        <h4>Competition Excellence (2025)</h4>
+                        <ul class="achievement-list">
+                            <li>National Winner: Lupin PreQL Business Analytics & MagicPin competitions</li>
+                            <li>National Finalist: TVS Credit Finance Track (Top 10/9,271)</li>
+                            <li>McKinsey Forward Program Graduate</li>
+                            <li>Winner in 8+ National-level competitions</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="download-btn" onclick="window.print(); return false;">
+        <i class="fas fa-download"></i> Download CV
+    </a>
+
+    <script>
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = Math.random() * 0.3 + 's';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for better UX
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
